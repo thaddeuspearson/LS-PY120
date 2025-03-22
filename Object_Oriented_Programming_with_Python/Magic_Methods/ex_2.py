@@ -47,7 +47,7 @@ class Vector:
         return f'Vector({x}, {y})'
 
     @classmethod
-    def _validate_input(cls, input: int, input_type: int, prop: str):
+    def _validate_input(cls, input: int, input_type: type, prop: str):
         if not isinstance(input, input_type):
             raise TypeError(
                 f"property '{prop}' should be a {input_type.__name__}"
