@@ -39,7 +39,7 @@ class Vector:
         return self.x == other.x and self.y == other.y
 
     def __abs__(self):
-        return sqrt(self.x**2 + self.y**2)
+        return sqrt(self.x ** 2 + self.y ** 2)
 
     def __repr__(self):
         x = repr(self.x)
