@@ -19,9 +19,11 @@ class Car:
     @classmethod
     def _validate_input(cls, input: int | str,
                         input_type: int | str,
-                        property: str):
+                        prop: str):
         if not isinstance(input, input_type):
-            raise TypeError(f"{property}: must be a {input_type}")
+            raise TypeError(
+                f"property '{prop}' must be a {input_type.__name__}"
+            )
 
     @property
     def name(self):
