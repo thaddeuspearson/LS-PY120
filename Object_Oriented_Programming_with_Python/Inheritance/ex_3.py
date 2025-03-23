@@ -32,13 +32,13 @@ class Vehicle:
         return Vehicle._num_vehicles
 
 
-class Car(Vehicle, SignalMixin):
+class Car(SignalMixin, Vehicle):
 
     def __init__(self):
         super().__init__()
 
 
-class Truck(Vehicle, SignalMixin):
+class Truck(SignalMixin, Vehicle):
 
     def __init__(self):
         super().__init__()
