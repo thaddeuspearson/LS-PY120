@@ -60,6 +60,7 @@ if __name__ == "__main__":
     assert car1.signal_off() == "Signal is now off"
     assert truck1.signal_off() == "Signal is now off"
 
-    boat1.signal_left()
-    # AttributeError: 'Boat' object has no attribute
-    # 'signal_left'
+    try:
+        boat1.signal_left()
+    except AttributeError:
+        print("'Boat' object has no attribute 'signal_left'")
