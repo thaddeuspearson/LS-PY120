@@ -12,7 +12,7 @@ class Cat:
 
     def __init__(self, name: str):
         self.name = name
-        print(f"Hello! My name is {self.name}!")
+        self.greet()
 
     @property
     def name(self) -> str:
@@ -21,6 +21,9 @@ class Cat:
     @name.setter
     def name(self, name: str):
         self._name = name
+
+    def greet(self):
+        print(f"Hello! My name is {self.name}!")
 
 
 if __name__ == "__main__":
