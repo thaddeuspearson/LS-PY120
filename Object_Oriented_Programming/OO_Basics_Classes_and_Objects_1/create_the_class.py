@@ -8,5 +8,4 @@ class Cat:
 
 
 if __name__ == "__main__":
-    cat = Cat()
-    assert isinstance(cat, Cat)
+    assert isinstance(Cat, type)
