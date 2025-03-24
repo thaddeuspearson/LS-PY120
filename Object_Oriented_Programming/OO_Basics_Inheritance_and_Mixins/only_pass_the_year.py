@@ -45,5 +45,5 @@ if __name__ == "__main__":
     assert car1.year == 2006
     try:
         car1.bed_type
-    except AttributeError:
-        print("AttributeError: 'Car' object has no attribute 'bed_type'")
+    except AttributeError as e:
+        print(e)
