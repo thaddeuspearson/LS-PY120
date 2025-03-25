@@ -53,7 +53,6 @@ class Cat(Pet):
 if __name__ == "__main__":
     cocoa = Cat('Cocoa', 3, 'black')
     cheddar = Cat('Cheddar', 4, 'yellow and white')
-    print(cocoa.info)
     assert cocoa.info == "My cat Cocoa is 3 years old and has black fur."
     assert cheddar.info == (
         "My cat Cheddar is 4 years old and has yellow and white fur."
