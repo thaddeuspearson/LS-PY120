@@ -1,9 +1,15 @@
 """
-Create an object-oriented number guessing class for numbers in the range 1 to
-100, with a limit of 7 guesses per game. Note that a game object should start
-a new game with a new number to guess with each call to play.
+Part One: Create an object-oriented number guessing class for numbers in the
+range 1 to 100, with a limit of 7 guesses per game. Note that a game object
+should start a new game with a new number to guess with each call to play.
+
+Part Two: Update your solution to accept a low and high value when you create
+a GuessingGame object, and use those values to compute a secret number for the
+game. You should also change the number of guesses allowed so the user can
+always win if she uses a good strategy.
 """
 from random import randint
+from math import log2
 
 
 class GuessingGame:
@@ -12,11 +18,16 @@ class GuessingGame:
     Accepts the start and end of the range to guess from and the number of
     guesses given to the user.
     """
-    def __init__(self, num_guesses: int = 7, start: int = 1, end: int = 100):
+    def __init__(self, num_guesses: int = 0, start: int = 1, end: int = 100):
+        if start > end:
+            start, end = end, start
+        if not num_guesses or num_guesses < 1:
+            self.num_guesses = int(log2(end - start + 1)) + 1
+        else:
+            self.num_guesses = num_guesses
         self.number = randint(start, end)
         self.start = start
         self.end = end
-        self.num_guesses = num_guesses
 
     def play(self):
         """Driver code for gameplay"""
