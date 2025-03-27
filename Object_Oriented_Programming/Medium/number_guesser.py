@@ -19,7 +19,7 @@ class GuessingGame:
         self.num_guesses = num_guesses
 
     def play(self):
-        """Driver code for gamplay"""
+        """Driver code for gameplay"""
         winner = False
 
         while not winner and self.num_guesses:
