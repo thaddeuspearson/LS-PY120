@@ -31,6 +31,7 @@ class Human(Player):
         super().__init__()
 
     def pick(self):
+        """gets a valid RPS choice for the Human Player"""
         while not self.choice:
             choice = input(
                 f"Please choose a valid throw -> "
@@ -46,6 +47,7 @@ class Computer(Player):
         super().__init__()
 
     def pick(self):
+        """Chooses a random valid RPS choice for the computer"""
         self.choice = random.choice(list(Player.CHOICES.keys()))
 
 
@@ -90,6 +92,7 @@ class RPSAnimation:
         """
 
     def animate(self):
+        """Driver code for the RPS animation"""
         for _ in range(3):
             system("clear")
             print(self._arms_down())
@@ -170,6 +173,7 @@ class RockPaperScissorsGame():
         if yes_or_no.lower().startswith("y"):
             self._reset_players()
             return True
+        return False
 
 
 if __name__ == "__main__":
