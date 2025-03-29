@@ -37,6 +37,11 @@ class Human(Player):
                 f"Please choose a valid throw -> "
                 f"{str(', '.join(Player.CHOICES))}: "
             ).lower()
+
+            if len(choice) == 1:    # accept the first char of a valid_choice
+                for valid_choice in Player.CHOICES:
+                    if choice == valid_choice[0]:
+                        choice = valid_choice
             self.choice = choice if choice in Player.CHOICES else None
 
 
